@@ -38,7 +38,7 @@ public class Util {
   public static String GetRandomString(Integer noOfChars) {
 
 
-    char[] chars = "ABCDEF012GHIJKL345MNOPQR678STUVWXYZ9".toCharArray();
+    char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
     StringBuilder stringBuilder = new StringBuilder();
     Random random1 = new Random();
     for (int i = 0; i < noOfChars; i++)
