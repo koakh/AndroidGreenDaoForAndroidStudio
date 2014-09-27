@@ -1,10 +1,15 @@
-package koakh.com.greendaoforandroidstudio;
+package koakh.com.greendaoexample.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import greendao.Box;
+
+import koakh.com.greendaoexample.R;
+import koakh.com.greendaoexample.backend.repositories.BoxRepository;
 
 public class BoxListActivity extends ActionBarActivity {
 
@@ -13,7 +18,6 @@ public class BoxListActivity extends ActionBarActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_box_list);
   }
-
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
@@ -29,8 +33,19 @@ public class BoxListActivity extends ActionBarActivity {
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
     if (id == R.id.action_settings) {
+      testBoxDao();
       return true;
     }
     return super.onOptionsItemSelected(item);
+  }
+
+  public void testBoxDao() {
+    Box box = new Box();
+    //if box with id 5 already exists in DB, it will be edited instead of created
+    box.setId((long) 5);
+    box.setName("My box");
+    box.setSlots(39);
+    box.setDescription("This is my box. I can put in it anything I wish.");
+    BoxRepository.insertOrUpdate(this, box);
   }
 }
