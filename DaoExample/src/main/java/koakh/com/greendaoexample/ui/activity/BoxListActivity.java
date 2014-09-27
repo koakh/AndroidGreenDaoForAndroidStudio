@@ -9,7 +9,6 @@ import android.widget.TextView;
 import java.util.List;
 
 import greendao.Box;
-
 import greendao.BoxDao;
 import koakh.com.greendaoexample.DaoExampleApplication;
 import koakh.com.greendaoexample.R;
@@ -25,11 +24,8 @@ public class BoxListActivity extends ActionBarActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_box_list);
 
-    TextView textView = (TextView) findViewById(R.id.textview);
-    textView.setText("Welcome");
-    textView.setText("Koakh");
-
     app = ((DaoExampleApplication) this.getApplicationContext());
+    app.setLogger((TextView) findViewById(R.id.textview));
   }
 
   @Override
@@ -47,14 +43,10 @@ public class BoxListActivity extends ActionBarActivity {
     int id = item.getItemId();
     if (id == R.id.action_menu_settings) {
       return true;
-    }
-    else
-    if (id == R.id.action_menu_test_boxdao_write){
+    } else if (id == R.id.action_menu_test_boxdao_write) {
       testBoxDaoWrite();
       return true;
-    }
-    else
-    if (id == R.id.action_menu_test_boxdao_read){
+    } else if (id == R.id.action_menu_test_boxdao_read) {
       testBoxDaoRead();
       return true;
     }
@@ -76,7 +68,7 @@ public class BoxListActivity extends ActionBarActivity {
     List<Box> boxs = boxDao.queryBuilder().list();
 
     for (int i = 0; i < boxs.size(); i++) {
-      Util.Log(app, String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
+      Util.Log(app, app.getLogger(), String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
     }
   }
 }
