@@ -9,9 +9,15 @@
     app:showAsAction="never"/>
 
   <item
-    android:id="@+id/action_menu_test_boxdao"
+    android:id="@+id/action_menu_test_boxdao_write"
     android:orderInCategory="100"
-    android:title="@string/action_menu_test_boxdao"
+    android:title="@string/action_menu_test_boxdao_write"
+    app:showAsAction="never"/>
+
+  <item
+    android:id="@+id/action_menu_test_boxdao_read"
+    android:orderInCategory="100"
+    android:title="@string/action_menu_test_boxdao_read"
     app:showAsAction="never"/>
 
 </menu>
