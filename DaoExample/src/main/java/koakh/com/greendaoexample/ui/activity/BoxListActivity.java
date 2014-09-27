@@ -6,8 +6,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.List;
+
 import greendao.Box;
 
+import greendao.BoxDao;
 import koakh.com.greendaoexample.DaoExampleApplication;
 import koakh.com.greendaoexample.R;
 import koakh.com.greendaoexample.backend.repositories.BoxRepository;
@@ -64,8 +67,11 @@ public class BoxListActivity extends ActionBarActivity {
   }
 
   public void testBoxDaoRead() {
-    Box box = new Box((long) 5);
-    Log.d(app.getTag(), String.format("%s:%s", box.getName(), box.getDescription()));
-  }
+    BoxDao boxDao = app.getDaoSession().getBoxDao();
+    List<Box> boxs = boxDao.queryBuilder().list();
 
+    for (int i = 0; i < boxs.size(); i++) {
+      Log.d(app.getTag(), String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
+    }
+  }
 }
