@@ -2,9 +2,9 @@ package koakh.com.greendaoexample.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ import greendao.BoxDao;
 import koakh.com.greendaoexample.DaoExampleApplication;
 import koakh.com.greendaoexample.R;
 import koakh.com.greendaoexample.backend.repositories.BoxRepository;
+import koakh.com.greendaoexample.backend.util.Util;
 
 public class BoxListActivity extends ActionBarActivity {
 
@@ -23,6 +24,10 @@ public class BoxListActivity extends ActionBarActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_box_list);
+
+    TextView textView = (TextView) findViewById(R.id.textview);
+    textView.setText("Welcome");
+    textView.setText("Koakh");
 
     app = ((DaoExampleApplication) this.getApplicationContext());
   }
@@ -59,10 +64,10 @@ public class BoxListActivity extends ActionBarActivity {
   public void testBoxDaoWrite() {
     Box box = new Box();
     //if box with id 5 already exists in DB, it will be edited instead of created
-    box.setId((long) 5);
-    box.setName("My box");
-    box.setSlots(39);
-    box.setDescription("This is my box. I can put in it anything I wish.");
+    box.setId((long) 6);
+    box.setName("My Other box");
+    box.setSlots(28);
+    box.setDescription("This is my box. I can put in it anything I wish. How many times i Want");
     BoxRepository.insertOrUpdate(this, box);
   }
 
@@ -71,7 +76,7 @@ public class BoxListActivity extends ActionBarActivity {
     List<Box> boxs = boxDao.queryBuilder().list();
 
     for (int i = 0; i < boxs.size(); i++) {
-      Log.d(app.getTag(), String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
+      Util.Log(app, String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
     }
   }
 }
