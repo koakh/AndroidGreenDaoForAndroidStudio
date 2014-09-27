@@ -1,6 +1,5 @@
 package koakh.com.greendaoexample.ui.activity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -32,7 +31,11 @@ public class BoxListActivity extends ActionBarActivity {
     // automatically handle clicks on the Home/Up button, so long
     // as you specify a parent activity in AndroidManifest.xml.
     int id = item.getItemId();
-    if (id == R.id.action_settings) {
+    if (id == R.id.action_menu_settings) {
+      return true;
+    }
+    else
+    if (id == R.id.action_menu_test_boxdao){
       testBoxDao();
       return true;
     }

@@ -3,6 +3,8 @@
 
   <string name="app_name">GreenDaoForAndroidStudio</string>
   <string name="hello_world">Hello world!</string>
-  <string name="action_settings">Settings</string>
+
+  <string name="action_menu_settings">Settings</string>
+  <string name="action_menu_test_boxdao">Test BoxDao</string>
 
 </resources>
