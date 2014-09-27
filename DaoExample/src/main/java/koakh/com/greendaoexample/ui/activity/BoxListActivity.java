@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Random;
 
 import greendao.Box;
 import greendao.BoxDao;
@@ -49,7 +50,11 @@ public class BoxListActivity extends ActionBarActivity {
     } else if (id == R.id.action_menu_test_boxdao_read) {
       testBoxDaoRead();
       return true;
+    } else if (id == R.id.action_menu_test_boxdao_write_random_fixtures) {
+      testBoxDaoWriteRandomFixtures(1000);
+      return true;
     }
+
     return super.onOptionsItemSelected(item);
   }
 
@@ -66,9 +71,23 @@ public class BoxListActivity extends ActionBarActivity {
   public void testBoxDaoRead() {
     BoxDao boxDao = app.getDaoSession().getBoxDao();
     List<Box> boxs = boxDao.queryBuilder().list();
+    //for (int i = 0; i < boxs.size(); i++) {
+    for (Box box : boxs) {
+      //Util.Log(app, app.getLogger(), String.format("Name: %s\nDescription: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
+      Util.Log(app, app.getLogger(), String.format("Id: %s\nName: %s\nDescription: %s", box.getId().toString(), box.getName(), box.getDescription()));
+    }
+  }
 
-    for (int i = 0; i < boxs.size(); i++) {
-      Util.Log(app, app.getLogger(), String.format("Name: %s: Description: %s", boxs.get(i).getName(), boxs.get(i).getDescription()));
+
+  public void testBoxDaoWriteRandomFixtures(Integer noOfRecs) {
+    Random random = new Random();
+    for (int i = 0; i < noOfRecs; i++) {
+      Box box = new Box();
+      box.setId((long) i);
+      box.setName(Util.GetRandomString(10));
+      box.setSlots(random.nextInt());
+      box.setDescription(Util.GetRandomString(20));
+      BoxRepository.insertOrUpdate(this, box);
     }
   }
 }

@@ -8,4 +8,6 @@
   <string name="action_menu_test_boxdao_read">BoxDao Read</string>
   <string name="action_menu_test_boxdao_write_random_fixtures">BoxDao Write Random Fixtures</string>
 
+  <string name="formater_datetime_format">yyyy-MM-dd HH:mm:ss</string>
+
 </resources>
