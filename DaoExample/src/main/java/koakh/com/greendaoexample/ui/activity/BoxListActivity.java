@@ -76,7 +76,7 @@ public class BoxListActivity extends ActionBarActivity {
         testBoxDaoRead();
         return true;
       case R.id.action_menu_test_boxdao_write_random_fixtures:
-        testBoxDaoWriteRandomFixtures(1000);
+        testBoxDaoWriteRandomFixtures(100);
         return true;
       case R.id.action_menu_settings:
         return true;
