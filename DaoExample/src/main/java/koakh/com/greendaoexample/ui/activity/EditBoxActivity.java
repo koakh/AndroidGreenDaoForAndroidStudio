@@ -136,5 +136,4 @@ public class EditBoxActivity extends Activity {
       etBoxDescription.setText(box.getDescription());
     }
   }
-
 }
