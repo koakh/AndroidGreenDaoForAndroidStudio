@@ -1,5 +1,8 @@
 package koakh.com.greendaoexample.ui.activity;
 
+import java.util.List;
+import java.util.Random;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -12,11 +15,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.List;
-import java.util.Random;
-
 import greendao.Box;
 import greendao.BoxDao;
+
 import koakh.com.greendaoexample.DaoExampleApplication;
 import koakh.com.greendaoexample.R;
 import koakh.com.greendaoexample.backend.repositories.BoxRepository;
@@ -134,9 +135,9 @@ public class BoxListActivity extends ActionBarActivity {
   public void testBoxDaoWrite() {
     Box box = new Box();
     //if box with id 5 already exists in DB, it will be edited instead of created
-    box.setId((long) 6);
-    box.setName("My Other box");
-    box.setSlots(28);
+    box.setId((long) 28);
+    box.setName("My box");
+    box.setSlots(280);
     box.setDescription("This is my box. I can put in it anything I wish. How many times i Want");
     BoxRepository.insertOrUpdate(this, box);
   }

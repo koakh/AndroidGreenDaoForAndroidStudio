@@ -1,7 +1,8 @@
+.bak
 .gradle
+.src
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
 .DS_Store
 /build
-GreenDaoForAndroidStudio-master.zip
