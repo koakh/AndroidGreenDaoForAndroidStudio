@@ -1,41 +1,44 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-      xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:tools="http://schemas.android.com/tools"
-      tools:context=".BoxListActivity">
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:context=".BoxListActivity">
 
   <item
     android:id="@+id/add_item"
+    android:title="@string/action_menu_add_item"
     android:icon="@drawable/ic_action_new"
-    android:showAsAction="ifRoom"
-    android:title="@string/menu_add_item"/>
+    android:orderInCategory="100"
+    android:showAsAction="ifRoom"/>
 
   <item
     android:id="@+id/delete_items"
+    android:title="@string/action_menu_delete_items"
     android:icon="@drawable/ic_action_discard"
-    android:showAsAction="ifRoom"
-    android:title="@string/menu_delete_items"/>
+    android:orderInCategory="100"
+    android:showAsAction="ifRoom"/>
 
   <item
     android:id="@+id/action_menu_test_boxdao_write"
-    android:orderInCategory="100"
     android:title="@string/action_menu_test_boxdao_write"
-    app:showAsAction="never"/>
+    android:orderInCategory="200"
+    android:showAsAction="never"/>
 
   <item
     android:id="@+id/action_menu_test_boxdao_read"
-    android:orderInCategory="100"
     android:title="@string/action_menu_test_boxdao_read"
-    app:showAsAction="never"/>
+    android:orderInCategory="200"
+    android:showAsAction="never"/>
 
   <item
     android:id="@+id/action_menu_test_boxdao_write_random_fixtures"
-    android:orderInCategory="100"
     android:title="@string/action_menu_test_boxdao_write_random_fixtures"
+    android:orderInCategory="200"
     app:showAsAction="never"/>
 
   <item
     android:id="@+id/action_menu_settings"
-    android:orderInCategory="200"
+    android:orderInCategory="300"
     android:title="@string/action_menu_settings"
     app:showAsAction="never"/>
 

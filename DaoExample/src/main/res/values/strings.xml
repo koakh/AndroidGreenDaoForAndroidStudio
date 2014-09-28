@@ -3,17 +3,16 @@
 
   <string name="app_name">GreenDaoForAndroidStudio</string>
 
-  <string name="action_menu_settings">Settings</string>
+  <string name="action_menu_add_item">Add item</string>
+  <string name="action_menu_delete_items">Delete items</string>
   <string name="action_menu_test_boxdao_write">BoxDao Write</string>
   <string name="action_menu_test_boxdao_read">BoxDao Read</string>
   <string name="action_menu_test_boxdao_write_random_fixtures">BoxDao Write Random Fixtures</string>
+  <string name="action_menu_settings">Settings</string>
 
   <string name="formater_datetime_format">yyyy-MM-dd HH:mm:ss</string>
 
   <!-- Organize -->
-
-  <string name="menu_add_item">Add item</string>
-  <string name="menu_delete_items">Delete items</string>
 
   <string name="button_save">Save</string>
 
@@ -31,6 +30,7 @@
   <string name="tv_label_box_name">Box name: </string>
   <string name="tv_label_box_size">Box slots: </string>
   <string name="tv_label_box_description">Box description: </string>
+
   <string name="error_must_be_number">Field must be a number</string>
   <string name="error_cannot_be_empty">Field cannot be empty</string>
 
