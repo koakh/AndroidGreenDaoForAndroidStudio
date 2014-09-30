@@ -24,7 +24,6 @@ public class Util {
 
   public static void Log(DaoExampleApplication app, TextView textview, String message, Boolean showToast) {
     String messageFinal = String.format("# %s\n%s\n", GetDate(app), message);
-
     if (textview != null) textview.setText(String.format("%s\n%s", textview.getText(),messageFinal));
     if (showToast) Toast.makeText(app, message, Toast.LENGTH_SHORT).show();
     Log.i(app.getTag(), String.format(message));
@@ -36,8 +35,6 @@ public class Util {
   }
 
   public static String GetRandomString(Integer noOfChars) {
-
-
     char[] chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".toCharArray();
     StringBuilder stringBuilder = new StringBuilder();
     Random random1 = new Random();
