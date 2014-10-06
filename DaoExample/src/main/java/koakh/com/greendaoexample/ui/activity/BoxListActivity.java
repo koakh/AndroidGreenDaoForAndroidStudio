@@ -90,6 +90,7 @@ public class BoxListActivity extends ActionBarActivity {
 
   //Init UI
 
+  //ListView click listener, on row click, edit record
   private void setupButtons() {
     lvItemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
       @Override
@@ -132,7 +133,7 @@ public class BoxListActivity extends ActionBarActivity {
     }
   }
 
-  //GreenDAO
+  //GreenDAO methods
 
   public void testBoxDaoWrite() {
     Box box = new Box();
