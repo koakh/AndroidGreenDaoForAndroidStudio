@@ -33,6 +33,8 @@ public class DbItemsAdapter extends ArrayAdapter<Box> {
     for (Box aBoxList : boxList) {
       add(aBoxList);
     }
+    // Notifies the attached observers that the underlying data has been changed and any
+    // View reflecting the data set should refresh itself.
     notifyDataSetChanged();
   }
 
@@ -73,6 +75,7 @@ public class DbItemsAdapter extends ArrayAdapter<Box> {
     viewHolder.tvDescription.setText(context.getString(R.string.tv_label_box_description) + " " + getItem(position).getDescription());
   }
 
+  //Inner class
   static class ViewHolder {
     LinearLayout root;
     TextView tvId;
@@ -80,4 +83,5 @@ public class DbItemsAdapter extends ArrayAdapter<Box> {
     TextView tvSize;
     TextView tvDescription;
   }
+
 }

@@ -24,7 +24,6 @@ public class DaoExampleApplication extends Application {
   }
 
   //Getters and Setters
-
   public String getTag() {
     return TAG;
   }

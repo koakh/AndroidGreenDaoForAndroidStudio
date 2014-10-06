@@ -11,16 +11,8 @@ import koakh.com.greendaoexample.DaoExampleApplication;
 
 public class BoxRepository {
 
-  public static void insertOrUpdate(Context context, Box box) {
-    getBoxDao(context).insertOrReplace(box);
-  }
-
-  public static void clearBoxes(Context context) {
-    getBoxDao(context).deleteAll();
-  }
-
-  public static void deleteBoxWithId(Context context, long id) {
-    getBoxDao(context).delete(getBoxForId(context, id));
+  private static BoxDao getBoxDao(Context context) {
+    return ((DaoExampleApplication) context.getApplicationContext()).getDaoSession().getBoxDao();
   }
 
   public static Box getBoxForId(Context context, long id) {
@@ -31,7 +23,16 @@ public class BoxRepository {
     return getBoxDao(context).loadAll();
   }
 
-  private static BoxDao getBoxDao(Context context) {
-    return ((DaoExampleApplication) context.getApplicationContext()).getDaoSession().getBoxDao();
+  public static void insertOrUpdate(Context context, Box box) {
+    getBoxDao(context).insertOrReplace(box);
   }
+
+  public static void deleteBoxWithId(Context context, long id) {
+    getBoxDao(context).delete(getBoxForId(context, id));
+  }
+
+  public static void clearBoxes(Context context) {
+    getBoxDao(context).deleteAll();
+  }
+
 }

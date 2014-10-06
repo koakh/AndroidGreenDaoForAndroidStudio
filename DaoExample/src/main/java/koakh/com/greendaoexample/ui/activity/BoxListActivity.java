@@ -26,6 +26,7 @@ import koakh.com.greendaoexample.ui.adapter.DbItemsAdapter;
 
 public class BoxListActivity extends ActionBarActivity {
 
+  //Application Singleton
   public DaoExampleApplication app;
   private ListView lvItemList;
   private DbItemsAdapter boxAdapter;
@@ -35,6 +36,7 @@ public class BoxListActivity extends ActionBarActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_box_list);
 
+    //Get Application Singleton
     app = ((DaoExampleApplication) this.getApplicationContext());
     app.setLogger((TextView) findViewById(R.id.textview));
 
